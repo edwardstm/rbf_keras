@@ -1,8 +1,8 @@
-from keras import backend as K
-from keras.engine.topology import Layer
-from keras.initializers import RandomUniform, Initializer, Constant
+import tensorflow as tf
+from tensorflow.keras import backend as K
+from tensorflow.keras.layers import Layer
+from tensorflow.keras.initializers import RandomUniform, Initializer, Constant
 import numpy as np
-
 
 class InitCentersRandom(Initializer):
     """ Initializer for initialization of centers of RBF network
@@ -17,8 +17,9 @@ class InitCentersRandom(Initializer):
         self.X = X
 
     def __call__(self, shape, dtype=None):
+        print( 'init shape: {}\ninput shape: {}'.format( self.X.shape, shape ))
         assert shape[1] == self.X.shape[1]
-        idx = np.random.randint(self.X.shape[0], size=shape[0])
+        idx = tf.constant( np.random.randint(self.X.shape[0], size=shape[0]) )
         return self.X[idx, :]
 
 

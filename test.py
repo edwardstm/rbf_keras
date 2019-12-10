@@ -1,7 +1,7 @@
 import numpy as np
-from keras.models import Sequential
-from keras.layers.core import Dense
-from keras.optimizers import RMSprop
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.optimizers import RMSprop
 from rbflayer import RBFLayer, InitCentersRandom
 import matplotlib.pyplot as plt
 
