@@ -4,6 +4,10 @@ from tensorflow.keras.layers import Layer
 from tensorflow.keras.initializers import RandomUniform, Initializer, Constant
 import numpy as np
 
+'''
+From GitHub rbf_keras repository, with modifications by Taylor Edwards
+'''
+
 class InitCentersRandom(Initializer):
     """ Initializer for initialization of centers of RBF network
         as random samples from the given data set.
@@ -17,7 +21,6 @@ class InitCentersRandom(Initializer):
         self.X = X
 
     def __call__(self, shape, dtype=None):
-        print( 'init shape: {}\ninput shape: {}'.format( self.X.shape, shape ))
         assert shape[1] == self.X.shape[1]
         idx = tf.constant( np.random.randint(self.X.shape[0], size=shape[0]) )
         return self.X[idx, :]
