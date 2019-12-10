@@ -1,6 +1,6 @@
 # rbf_keras
 *Author: Petra Vidnerová, The Czech Academy of Sciences, Institute of Computer Science*
-
+*Updated to use tensorflow.keras by Taylor Edwards, Appalachian State University*
 
 RBF layer for [Keras](https://keras.io/)
 
